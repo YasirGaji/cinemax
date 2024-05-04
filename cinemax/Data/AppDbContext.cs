@@ -5,36 +5,42 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using cinemax.Models;
 
+namespace cinemax.Data
+{
+  public class AppDbContext : DbContext
+  {
 
-
-namespace cinemax.Data {
-  public class AppDbContext:DbContext {
-
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
 
     }
 
-    protected override void OnModelCreating(ModelBuillder modelBuillder) {
-      modelBuillder.Entity<Actor_Movie>().Haskey(am => new {
-        am.ActorId,
-        am.MovieId
-      });
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      modelBuilder.Entity<Actor_Movie>()
+          .HasKey(am => new { am.ActorId, am.MovieId }); // Use 'am' for Actor_Movie entity
 
-      modelBuillder.Entity<Actor_Movie>().HasOne(m => m.Movie).WithMany(am => async.Actors_Movies).HasForeignKey(modelBuillder => m.MovieId);
+      modelBuilder.Entity<Actor_Movie>()
+          .HasOne(am => am.Movie) // Use 'am' for Actor_Movie entity
+          .WithMany(m => m.Actors_Movies)
+          .HasForeignKey(am => am.MovieId);
 
-      modelBuillder.Entity<Actor_Movie>().HasOne(m => m.Actor).WithMany(am => async.Actors_Movies).HasForeignKey(modelBuillder => m.ActorId);
+      modelBuilder.Entity<Actor_Movie>()
+          .HasOne(am => am.Actor) // Use 'am' for Actor_Movie entity
+          .WithMany(m => m.Actors_Movies)
+          .HasForeignKey(am => am.ActorId);
 
-      base.OnModelCreating(modelBuillder);
+      base.OnModelCreating(modelBuilder);
     }
 
-    public Obset<Actor> Actors { get; set; }
-    
-    public Obset<Movies> Movies { get; set; }
+    public DbSet<Actor> Actors { get; set; }
 
-    public Obset<Actor_Movie> Actors_Movies { get; set; }
+    public DbSet<Movie> Movies { get; set; } // Fix typo with capital "M"
 
-    public Obset<Cinema> Cinemas { get; set; }
+    public DbSet<Actor_Movie> Actors_Movies { get; set; }
 
-    public Obset<Producer> Producers { get; set; }
+    public DbSet<Cinema> Cinemas { get; set; }
+
+    public DbSet<Producer> Producers { get; set; }
   }
 }

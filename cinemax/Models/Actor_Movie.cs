@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 namespace cinemax.Models {
-  public class Actor_Models {
+  public class Actor_Movie {
     public int MovieId { get; set; }
     public Movie Movie { get; set; }
     

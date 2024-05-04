@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 namespace cinemax.Models {
   public class Actor {
 
-    [key]
+    [Key]
 
     public int Id { get; set; }
     public string ProfilePictureURL { get; set; }

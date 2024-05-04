@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace cinemax.Models {
   public class Producer {
 
-    [key]
+    [Key]
 
     public int Id { get; set; }
     public string ProfilePictureURL { get; set; }

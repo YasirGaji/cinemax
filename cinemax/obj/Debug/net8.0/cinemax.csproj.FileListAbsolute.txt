@@ -28,3 +28,8 @@
 /Users/yasirl/Downloads/mvc/project 1/cinemax/obj/Debug/net8.0/cinemax.pdb
 /Users/yasirl/Downloads/mvc/project 1/cinemax/obj/Debug/net8.0/cinemax.genruntimeconfig.cache
 /Users/yasirl/Downloads/mvc/project 1/cinemax/obj/Debug/net8.0/ref/cinemax.dll
+/Users/yasirl/Downloads/mvc/project 1/cinemax/obj/Debug/net8.0/cinemax.csproj.AssemblyReference.cache
+/Users/yasirl/Downloads/mvc/project 1/cinemax/obj/Debug/net8.0/cinemax.sourcelink.json
+/Users/yasirl/Downloads/mvc/project 1/cinemax/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/Users/yasirl/Downloads/mvc/project 1/cinemax/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/yasirl/Downloads/mvc/project 1/cinemax/obj/Debug/net8.0/cinemax.csproj.CopyComplete
